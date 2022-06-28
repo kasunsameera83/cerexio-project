@@ -20,6 +20,9 @@ const styles = {
 	bgColor: {
 		backgroundImage: 'linear-gradient(to right top, #000000, #121212, #1d1d1e, #28292a, #323536)',
 	},
+	textColor: {
+		color:"red"
+	}
 }
 
 const Login = () => {
@@ -119,12 +122,12 @@ const Login = () => {
 										fullWidth 
 										label="Email" 
 										variant="standard" 
+										sx={{input:{color:'#00cad6'}}}
 									/>
 								</Box>
 								<Box sx={{ 
 									display: 'flex', 
 									alignItems: 'flex-end' }}
-									
 								>
 									<KeyIcon text="primary" sx={{ mr: 1, my: 0.5 }} />
 									<TextField 
@@ -133,6 +136,7 @@ const Login = () => {
 										label="Password" 
 										variant="standard" 
 										type="password"
+										sx={{input:{color:'#00cad6'}}}
 									/>
 								</Box> 
 								<Link to="#">
