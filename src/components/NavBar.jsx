@@ -11,14 +11,15 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 
 import logo from '../images/logo.svg'
 import userProfileImg from '../images/userProfile.jpg'
-import { Menu, MenuItem } from '@mui/material';
+import { Menu, MenuItem, Dialog, DialogTitle, DialogContent, DialogActions, Stack, Paper } from '@mui/material';
+import DialogContentText from '@mui/material/DialogContentText';
 
-import { Link } from 'react-router-dom';
-
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 const NavBar = () => {
-
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [openList, setOpenList] = React.useState(false);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -27,6 +28,14 @@ const NavBar = () => {
         setAnchorEl(null);
         console.log(anchorEl)
     };
+
+    const handleCloseList = () => {
+        setOpenList(false);
+    };
+
+    const handleList = (props) => {
+        setOpenList(true);
+    }
 
     return (
         <AppBar position="static">
@@ -57,7 +66,9 @@ const NavBar = () => {
                         GAS Stations
                     </Typography>
                     <Box sx={{ color: 'action.active' }}>
-                        <NotificationsIcon />
+                        <IconButton sx={{ p: 0 }} onClick={handleList}>
+                            <NotificationsIcon />
+                        </IconButton>
                     </Box>
                     <Box ml={2} sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
@@ -90,6 +101,27 @@ const NavBar = () => {
                     </Box>
                 </Toolbar>
             </Container>
+            <Dialog
+                open={openList}
+                onClose={handleCloseList}
+            >
+                <DialogTitle color="gray">Appointment List</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        <Paper>
+                            <Stack p={2} direction="row">
+                                <LocalGasStationIcon  style={{ color: '#00cad6' }}/>
+                                <Typography  ml={2} style={{ color: 'gray' }}>Maharagama</Typography>
+                                <Typography  ml={2} style={{ color: 'gray' }}>06/29/2022</Typography>
+                                <Typography  ml={2} mr={2} style={{ color: 'gray' }}>10:30 AM</Typography>
+                                <IconButton sx={{ p: 0 }} >
+                                    <HighlightOffIcon  style={{ color: '#f50057' }} />
+                                </IconButton>
+                            </Stack>
+                        </Paper>
+                    </DialogContentText>
+                </DialogContent>
+            </Dialog>
         </AppBar>
     )
 }

@@ -17,8 +17,6 @@ const styles = {
 	},
 }
 
-
-
 const FilterBar = () => {
     const [distance, setdistance] = React.useState("35km")
     const [open, setOpen] = React.useState(false);
@@ -73,7 +71,6 @@ const FilterBar = () => {
                             direction="row" 
                             sx={{ mb: 1 }} 
                             alignItems="center"
-                            
                         >
                             <FilterAltIcon style={{ color: 'white' }}/>
                             <InputBase
@@ -84,9 +81,6 @@ const FilterBar = () => {
                             <IconButton type="submit" sx={{ p: '5px' }} aria-label="search">
                                 <SearchIcon style={{ color: 'white' }} />
                             </IconButton >
-                             {/* <IconButton type="submit" sx={{ p: '5px', display:{xs:"none", md:"flex"} }} aria-label="search">
-                                <AccessTimeFilledIcon style={{ color: 'white' }} />
-                            </IconButton > */}
                             <Button sx={{ display:{xs:"none", md:"flex"} }} variant="contained" endIcon={<ShareLocationIcon />} onClick={handleClickOpen}>
                                 {distance}
                             </Button>
@@ -135,7 +129,6 @@ const FilterBar = () => {
                             marks
                             min={5}
                             max={50}
-                            
                         />
                         <Typography>{distance}</Typography>
                         </Box>

@@ -12,15 +12,9 @@ const Result = (props) => {
     const [availability, setAvailability] =  React.useState("")
     const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
 
-    // const handleChange = (newValue) => {
-    //   setValue(newValue);
-    // };
-  
-
     const handleClose = () => {
         setOpen(false);
     };
-
 
     const handleBook = (props) => {
         setOpen(true);
@@ -156,8 +150,6 @@ const Result = (props) => {
                         <Button variant="contained" sx={{width:"100%", }} onClick={handleClose}>Book</Button>
                     </DialogContentText>
                 </DialogContent>
-                <DialogActions>
-                </DialogActions>
             </Dialog>
         </React.Fragment>
     )
