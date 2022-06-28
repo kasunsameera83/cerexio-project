@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "stationName":"Maharagama",
+        "distance":"2km",
+        "availability":"open"
+    },
+    {
+        "id":2,
+        "stationName":"Nugegoda",
+        "distance":"5km",
+        "availability":"open"
+    },
+    {
+        "id":3,
+        "stationName":"Mirihana",
+        "distance":"3.5km",
+        "availability":"close"
+    }
+]
